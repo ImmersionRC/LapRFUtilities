@@ -360,7 +360,7 @@ namespace LapRF
 							{
 								rtcTime = br.ReadUInt64();
 								currentPassingRecord.rtcTime = rtcTime;
-								Debug.Print("LAPRF_TOR_PASSING time {0} {1}", rtcTime, GetTime(rtcTime / 1000).ToString("MMMM dd, yyyy - H:mm:ss"));
+								Debug.Print("LAPRF_TOR_PASSING time {0} {1}", rtcTime, GetTime(rtcTime / 1000).ToString("MMMM dd, yyyy - H:mm:ss.fff"));
 								currentPassingRecord.bValid = true;                     // not really true...
 
 								// store the passing record in a queue (FIFO)

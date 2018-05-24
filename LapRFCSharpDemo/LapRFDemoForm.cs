@@ -122,7 +122,7 @@ namespace WindowsFormsApplication1
 			if (laprf.getPassingRecordCount() > 0)
 			{
 				PassingRecord nextRecord = laprf.getNextPassingRecord();
-				passingRecordText.Text = String.Format("Passing: {0} {1} / {2} ({3})", nextRecord.passingNumber, nextRecord.pilotId, laprf.GetTime(nextRecord.rtcTime / 1000).ToString("MMMM dd, yyyy - H:mm:ss"), nextRecord.rtcTime);
+				passingRecordText.Text = String.Format("Passing: {0} {1} / {2} ({3})", nextRecord.passingNumber, nextRecord.pilotId, laprf.GetTime(nextRecord.rtcTime / 1000).ToString("MMMM dd, yyyy - H:mm:ss.fff"), nextRecord.rtcTime);
 			}
 
 			timer1.Enabled = true;
