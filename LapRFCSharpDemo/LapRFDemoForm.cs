@@ -122,7 +122,7 @@ namespace WindowsFormsApplication1
 			if (laprf.getPassingRecordCount() > 0)
 			{
 				PassingRecord nextRecord = laprf.getNextPassingRecord();
-				passingRecordText.Text = String.Format("Passing: {0} {1} {2}", nextRecord.passingNumber, nextRecord.pilotId, nextRecord.rtcTime);
+				passingRecordText.Text = String.Format("Passing: {0} {1} / {2} ({3})", nextRecord.passingNumber, nextRecord.pilotId, laprf.GetTime(nextRecord.rtcTime / 1000).ToString("MMMM dd, yyyy - H:mm:ss"), nextRecord.rtcTime);
 			}
 
 			timer1.Enabled = true;
@@ -200,6 +200,31 @@ namespace WindowsFormsApplication1
 		}
 
 		//------------------------------------------------------------------------------------------------------------
+		private void requestRTCTime()
+		{
+			MemoryStream dataStream = laprf.requestRTCTime();
+			byte[] pack = dataStream.ToArray();
+			if (sock != null)
+				sock.Send(pack);
+			if (usbcdc_itf != null)
+				usbcdc_itf.SendBytes(pack);
+		}
+
+		//------------------------------------------------------------------------------------------------------------
+		private void setRTCTime()
+		{
+			laprf.prepare_sendable_packet(LapRF.LapRFProtocol.laprf_type_of_record.LAPRF_TOR_TIME);
+			ulong timeSince1970 = (ulong)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
+			laprf.append_field_of_record_u64(0x02, timeSince1970);
+			byte[] pack = laprf.finalize_sendable_packet().ToArray();
+			//Debug.WriteLine(BitConverter.ToString(pack));
+			if (sock != null)
+				sock.Send(pack);
+			if (usbcdc_itf != null)
+				usbcdc_itf.SendBytes(pack);
+		}
+
+		//------------------------------------------------------------------------------------------------------------
 		// pre-configure all channels for RaceBand, 25mW threshold and gain settings
 		private void raceband25mWButton_Click(object sender, EventArgs e)
 		{
@@ -243,8 +268,14 @@ namespace WindowsFormsApplication1
 		//------------------------------------------------------------------------------------------------------------
 		private void startRaceButton_Click(object sender, EventArgs e)
 		{
+			if (checkBoxSetRTC.Checked)
+				setRTCTime();
+
 			laprf.prepare_sendable_packet(LapRF.LapRFProtocol.laprf_type_of_record.LAPRF_TOR_STATE_CONTROL);
-			laprf.append_field_of_record_u8(0x20, 1);                // 1 = start race
+			if (checkBoxCrashMode.Checked)
+				laprf.append_field_of_record_u8(0x20, 2);   // 1 = start race in crash mode
+			else
+				laprf.append_field_of_record_u8(0x20, 1);   // 1 = start race in normal mode
 			byte[] pack = laprf.finalize_sendable_packet().ToArray();
 			if (sock != null)
 				sock.Send(pack);

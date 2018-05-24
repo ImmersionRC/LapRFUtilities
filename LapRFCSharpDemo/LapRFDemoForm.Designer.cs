@@ -88,11 +88,13 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.interfaceCombo = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
+			this.checkBoxSetRTC = new System.Windows.Forms.CheckBox();
+			this.checkBoxCrashMode = new System.Windows.Forms.CheckBox();
 			this.SuspendLayout();
 			// 
 			// sendSettingToLapRF
 			// 
-			this.sendSettingToLapRF.Location = new System.Drawing.Point(250, 260);
+			this.sendSettingToLapRF.Location = new System.Drawing.Point(250, 295);
 			this.sendSettingToLapRF.Name = "sendSettingToLapRF";
 			this.sendSettingToLapRF.Size = new System.Drawing.Size(127, 40);
 			this.sendSettingToLapRF.TabIndex = 0;
@@ -192,7 +194,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(9, 19);
+			this.label1.Location = new System.Drawing.Point(9, 12);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(40, 13);
 			this.label1.TabIndex = 11;
@@ -201,7 +203,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(50, 19);
+			this.label2.Location = new System.Drawing.Point(50, 12);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(57, 13);
 			this.label2.TabIndex = 12;
@@ -210,7 +212,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(117, 19);
+			this.label3.Location = new System.Drawing.Point(117, 12);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(29, 13);
 			this.label3.TabIndex = 14;
@@ -227,7 +229,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(183, 19);
+			this.label4.Location = new System.Drawing.Point(183, 12);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(54, 13);
 			this.label4.TabIndex = 16;
@@ -475,7 +477,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(250, 19);
+			this.label5.Location = new System.Drawing.Point(250, 12);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(32, 13);
 			this.label5.TabIndex = 45;
@@ -483,7 +485,7 @@
 			// 
 			// raceband25mWButton
 			// 
-			this.raceband25mWButton.Location = new System.Drawing.Point(9, 260);
+			this.raceband25mWButton.Location = new System.Drawing.Point(9, 295);
 			this.raceband25mWButton.Name = "raceband25mWButton";
 			this.raceband25mWButton.Size = new System.Drawing.Size(91, 40);
 			this.raceband25mWButton.TabIndex = 46;
@@ -493,16 +495,16 @@
 			// 
 			// passingRecordText
 			// 
-			this.passingRecordText.Location = new System.Drawing.Point(21, 330);
+			this.passingRecordText.Location = new System.Drawing.Point(9, 365);
 			this.passingRecordText.Name = "passingRecordText";
-			this.passingRecordText.Size = new System.Drawing.Size(621, 20);
+			this.passingRecordText.Size = new System.Drawing.Size(633, 20);
 			this.passingRecordText.TabIndex = 47;
 			this.passingRecordText.Text = "<none>";
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(18, 314);
+			this.label6.Location = new System.Drawing.Point(6, 349);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(111, 13);
 			this.label6.TabIndex = 48;
@@ -510,7 +512,7 @@
 			// 
 			// ipAddressText
 			// 
-			this.ipAddressText.Location = new System.Drawing.Point(461, 280);
+			this.ipAddressText.Location = new System.Drawing.Point(461, 315);
 			this.ipAddressText.Name = "ipAddressText";
 			this.ipAddressText.Size = new System.Drawing.Size(93, 20);
 			this.ipAddressText.TabIndex = 49;
@@ -519,7 +521,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(461, 260);
+			this.label7.Location = new System.Drawing.Point(461, 295);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(93, 13);
 			this.label7.TabIndex = 50;
@@ -527,7 +529,7 @@
 			// 
 			// connectButton
 			// 
-			this.connectButton.Location = new System.Drawing.Point(570, 260);
+			this.connectButton.Location = new System.Drawing.Point(570, 295);
 			this.connectButton.Name = "connectButton";
 			this.connectButton.Size = new System.Drawing.Size(72, 40);
 			this.connectButton.TabIndex = 51;
@@ -537,7 +539,7 @@
 			// 
 			// startRaceButton
 			// 
-			this.startRaceButton.Location = new System.Drawing.Point(108, 260);
+			this.startRaceButton.Location = new System.Drawing.Point(108, 295);
 			this.startRaceButton.Name = "startRaceButton";
 			this.startRaceButton.Size = new System.Drawing.Size(58, 40);
 			this.startRaceButton.TabIndex = 52;
@@ -547,7 +549,7 @@
 			// 
 			// stopRaceButton
 			// 
-			this.stopRaceButton.Location = new System.Drawing.Point(171, 260);
+			this.stopRaceButton.Location = new System.Drawing.Point(171, 295);
 			this.stopRaceButton.Name = "stopRaceButton";
 			this.stopRaceButton.Size = new System.Drawing.Size(62, 40);
 			this.stopRaceButton.TabIndex = 53;
@@ -559,22 +561,22 @@
 			// 
 			this.comPortCombo.FormattingEnabled = true;
 			this.comPortCombo.Items.AddRange(new object[] {
-			"COM1",
-			"COM2",
-			"COM3",
-			"COM4",
-			"COM5",
-			"COM6",
-			"COM7",
-			"COM8",
-			"COM9",
-			"COM10",
-			"COM11",
-			"COM12",
-			"COM13",
-			"COM14",
-			"COM15"});
-			this.comPortCombo.Location = new System.Drawing.Point(461, 279);
+            "COM1",
+            "COM2",
+            "COM3",
+            "COM4",
+            "COM5",
+            "COM6",
+            "COM7",
+            "COM8",
+            "COM9",
+            "COM10",
+            "COM11",
+            "COM12",
+            "COM13",
+            "COM14",
+            "COM15"});
+			this.comPortCombo.Location = new System.Drawing.Point(461, 314);
 			this.comPortCombo.Name = "comPortCombo";
 			this.comPortCombo.Size = new System.Drawing.Size(93, 21);
 			this.comPortCombo.TabIndex = 54;
@@ -584,7 +586,7 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(462, 260);
+			this.label8.Location = new System.Drawing.Point(462, 295);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(88, 13);
 			this.label8.TabIndex = 55;
@@ -595,9 +597,9 @@
 			// 
 			this.interfaceCombo.FormattingEnabled = true;
 			this.interfaceCombo.Items.AddRange(new object[] {
-			"USB",
-			"Ethernet"});
-			this.interfaceCombo.Location = new System.Drawing.Point(383, 279);
+            "USB",
+            "Ethernet"});
+			this.interfaceCombo.Location = new System.Drawing.Point(383, 314);
 			this.interfaceCombo.Name = "interfaceCombo";
 			this.interfaceCombo.Size = new System.Drawing.Size(72, 21);
 			this.interfaceCombo.TabIndex = 57;
@@ -607,17 +609,39 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(383, 260);
+			this.label9.Location = new System.Drawing.Point(383, 295);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(43, 13);
 			this.label9.TabIndex = 58;
 			this.label9.Text = "Com. Itf";
 			// 
+			// checkBoxSetRTC
+			// 
+			this.checkBoxSetRTC.AutoSize = true;
+			this.checkBoxSetRTC.Location = new System.Drawing.Point(21, 258);
+			this.checkBoxSetRTC.Name = "checkBoxSetRTC";
+			this.checkBoxSetRTC.Size = new System.Drawing.Size(168, 17);
+			this.checkBoxSetRTC.TabIndex = 59;
+			this.checkBoxSetRTC.Text = "Set RTC Time (on Start Race)";
+			this.checkBoxSetRTC.UseVisualStyleBackColor = true;
+			// 
+			// checkBoxCrashMode
+			// 
+			this.checkBoxCrashMode.AutoSize = true;
+			this.checkBoxCrashMode.Location = new System.Drawing.Point(209, 258);
+			this.checkBoxCrashMode.Name = "checkBoxCrashMode";
+			this.checkBoxCrashMode.Size = new System.Drawing.Size(125, 17);
+			this.checkBoxCrashMode.TabIndex = 60;
+			this.checkBoxCrashMode.Text = "Crash Mode Enabled";
+			this.checkBoxCrashMode.UseVisualStyleBackColor = true;
+			// 
 			// LapRFDemoForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(655, 371);
+			this.ClientSize = new System.Drawing.Size(656, 396);
+			this.Controls.Add(this.checkBoxCrashMode);
+			this.Controls.Add(this.checkBoxSetRTC);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.interfaceCombo);
 			this.Controls.Add(this.label8);
@@ -744,6 +768,8 @@
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.ComboBox interfaceCombo;
 		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.CheckBox checkBoxSetRTC;
+		private System.Windows.Forms.CheckBox checkBoxCrashMode;
 	}
 }
 
